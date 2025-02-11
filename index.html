@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Te Amo 🌷</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #000428, #004e92);
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      overflow: hidden;
+      color: white;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #E91E63;
+      text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.5);
+      text-align: center;
+      margin-bottom: 50px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .garden {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tulip {
+      position: relative;
+      width: 10px;
+      height: 100px;
+      background-color: green;
+      border-radius: 5px;
+      animation: grow 3s ease-in-out forwards;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    }
+
+    .tulip::before,
+    .tulip::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 20px 10px 0 10px;
+      border-color: #E91E63 transparent transparent transparent;
+      transform-origin: bottom center;
+      box-shadow: 0 0 8px rgba(233, 30, 99, 0.7);
+    }
+
+    .tulip::before {
+      left: -10px;
+      transform: rotate(-30deg);
+    }
+
+    .tulip::after {
+      right: -10px;
+      transform: rotate(30deg);
+    }
+
+    .leaf {
+      position: absolute;
+      width: 20px;
+      height: 5px;
+      background-color: #32CD32;
+      border-radius: 10px;
+      top: 50%;
+      box-shadow: 0 0 6px rgba(50, 205, 50, 0.7);
+    }
+
+    .leaf.left {
+      transform: rotate(-30deg);
+      left: -15px;
+    }
+
+    .leaf.right {
+      transform: rotate(30deg);
+      right: -15px;
+    }
+
+    .tulip .leaf {
+      opacity: 0;
+      animation: leafGrow 3s 1s forwards;
+    }
+
+    @keyframes grow {
+      from {
+        height: 0;
+      }
+      to {
+        height: 100px;
+      }
+    }
+
+    @keyframes leafGrow {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Te Amo 🌷</h1>
+  <div class="garden">
+    <div class="tulip">
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+    </div>
+    <div class="tulip">
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+    </div>
+    <div class="tulip">
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+    </div>
+    <div class="tulip">
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+    </div>
+  </div>
+</body>
+</html>
